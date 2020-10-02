@@ -42,12 +42,38 @@ cly4 = 460
 
 cliff4 = [((clx4 + 3 * i), cly4 - 100 * i ** (-0.2)) for i in range(1, 40)]
 polygon(screen, (160, 73, 58), [(clx4 - 100, cly4 + 100), *cliff4, (clx4 + 200, cly4 + 100)])
-polygon(screen, (160, 73, 58), [(clx4 + 200, cly4 + 100), (992, 411.94), (1060, 360), (1110, 390), (1160, 350), (1240, 380), (a, 300),(a,500)])
-polygon(screen, (160, 73, 58), [(a,530), (a,400), (a- 200, 530)])
+polygon(screen, (160, 73, 58),
+        [(clx4 + 200, cly4 + 100), (992, 411.94), (1060, 360), (1110, 390), (1160, 350), (1240, 380), (a, 300),
+         (a, 500)])
+polygon(screen, (160, 73, 58), [(a, 530), (a, 400), (a - 200, 530)])
 polygon(screen, (172, 136, 148), [(0, 520), (1200, 530),
                                   (1200, 1000), (0, 1000)])
 
 polygon(screen, (160, 73, 58), [(0, 520), (0, 405), (20, 405), (45, 425), (100, 520)])
+# third mountain range
+polygon(screen, (44, 18, 37), [(0, 1000), (0, 400), (150, 440), (280, 650), (360, 820)])
+clx5 = 330
+cly5 = 880
+cliff5 = [((clx5 + 3 * i), cly5 - 100 * i ** (-0.2)) for i in range(1, 100)]
+polygon(screen, (44, 18, 37), [(clx5 - 100, cly5 + 100), *cliff5, (clx5 + 200, cly5 + 100)])
+polygon(screen, (44, 18, 37), [(530, 900), (800, 700),(860, 725),(860, 900)])
+clx6 = 849
+cly6 = 820
+cliff6 = [((clx6 + 3 * i), cly6 - 100 * i ** (-0.05)) for i in range(1, 20)]
+polygon(screen, (44, 18, 37), [(clx6, cly6+200), *cliff6, (clx6+60, cly6+200)])
+clx7 = 906
+cly7 = 733.7
+cliff7 = [(clx7 + i * 9, cly7 - i ** (3 / 2)) for i in range(33)]
+polygon(screen, (44, 18, 37),
+        [(clx6+60, cly6+200), *cliff7, (1300,800)])
+ellipse_2 = pygame.Surface((800, 800), pygame.SRCALPHA)
+ellipse(ellipse_2, (44, 18, 37), (500, 100, 300, 150))
+ellipse_2 = pygame.transform.rotate(ellipse_2, 45)
+screen.blit(ellipse_2, (660, 380))
+polygon(screen, (44, 18, 37),
+        [(a, a), (a,600), (a-300,800)])
+
+
 
 
 # def bird(x, y, size):
