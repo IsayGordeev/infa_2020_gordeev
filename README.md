@@ -1,0 +1,6 @@
+# infa_2020_gordeev
+picture initial 494f61b7ec2493a6452cd2b87f5b8aaac2e90ea5
+picture upgrade 77730b6556704361746da1e2477192ad37e9119d
+picture upgrade 7c10c05d498d06151067721c07a5a539e03bf4f2
+picture upgrade ea0bc7d7d0290439e84e9dba74e0061944482779
+picture upgrade 3b89ffe69bf1755690294ab77fd880ec85eaa5f0
