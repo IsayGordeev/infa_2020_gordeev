@@ -56,35 +56,48 @@ clx5 = 330
 cly5 = 880
 cliff5 = [((clx5 + 3 * i), cly5 - 100 * i ** (-0.2)) for i in range(1, 100)]
 polygon(screen, (44, 18, 37), [(clx5 - 100, cly5 + 100), *cliff5, (clx5 + 200, cly5 + 100)])
-polygon(screen, (44, 18, 37), [(530, 900), (800, 700),(860, 725),(860, 900)])
+polygon(screen, (44, 18, 37), [(530, 900), (800, 700), (860, 725), (860, 900)])
 clx6 = 849
 cly6 = 820
 cliff6 = [((clx6 + 3 * i), cly6 - 100 * i ** (-0.05)) for i in range(1, 20)]
-polygon(screen, (44, 18, 37), [(clx6, cly6+200), *cliff6, (clx6+60, cly6+200)])
+polygon(screen, (44, 18, 37), [(clx6, cly6 + 200), *cliff6, (clx6 + 60, cly6 + 200)])
 clx7 = 906
 cly7 = 733.7
 cliff7 = [(clx7 + i * 9, cly7 - i ** (3 / 2)) for i in range(33)]
 polygon(screen, (44, 18, 37),
-        [(clx6+60, cly6+200), *cliff7, (1300,800)])
+        [(clx6 + 60, cly6 + 200), *cliff7, (1300, 800)])
 ellipse_2 = pygame.Surface((800, 800), pygame.SRCALPHA)
 ellipse(ellipse_2, (44, 18, 37), (500, 100, 300, 150))
 ellipse_2 = pygame.transform.rotate(ellipse_2, 45)
 screen.blit(ellipse_2, (660, 380))
 polygon(screen, (44, 18, 37),
-        [(a, a), (a,600), (a-300,800)])
+        [(a, a), (a, 600), (a - 300, 800)])
 
 
+def bird(x, y, size):
+    # lines(screen, (62, 34, 16), False, [[0, 0], [80, 0], [80, 50], [0, 50]])
+    bird = pygame.Surface((200 * size, 200 * size), pygame.SRCALPHA)
+    subbird1 = pygame.Surface((15 * size + 1, 50 * size + 1), pygame.SRCALPHA)
+    subbird2 = pygame.Surface((50 * size + 1, 15 * size + 1), pygame.SRCALPHA)
+    # lines(subbird1, (0, 0, 255),False, [[0,0],[0,50], [15,50] ,[15,0]])
+    # lines(subbird2, (0, 255, 0),False, [[0,0],[0,15], [50,15] ,[50,0]])
+    ellipse(subbird1, (62, 34, 16), (size * 15 * 7 / 15, size * 50 * 1 / 10, 15 * size, 50 * size))
+    ellipse(subbird2, (62, 34, 16), (size * 50 * 1 / 25, size * 15 * 2 / 15, 50 * size, 15 * size))
+    subbird1 = pygame.transform.rotate(subbird1, -60)
+    subbird2 = pygame.transform.rotate(subbird2, -30)
+    bird.blit(subbird1, (50 * size - 12 * size, size * 27 - 25 * size))
+    bird.blit(subbird2, (0, (50 - 15 - 25) * size))
+    screen.blit(bird, (x, y))
 
 
-# def bird(x, y, size):
-#     ellipse_4 = pygame.Surface((800, 800), pygame.SRCALPHA)
-#     ellipse(ellipse_4, (181, 191, 191, 100), (120, 0, 500, 100))
-#     ellipse_4 = pygame.transform.rotate(ellipse_4, 30)
-#     screen.blit(ellipse_4, (205, 225))
-
-# bird(500, 500, 100)
-
-
+bird(450, 270, 1)
+bird(553, 280, 1)
+bird(550, 326, 1)
+bird(460, 340, 1)
+bird(760, 495, 1.2)
+bird(840, 570, 1)
+bird(1000, 550, 0.9)
+bird(930, 600, 1.4)
 pygame.display.update()
 clock = pygame.time.Clock()
 finished = False
